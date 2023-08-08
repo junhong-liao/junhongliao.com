@@ -44,7 +44,7 @@
 <p class="startText">press 'Enter' if bored</p>
 </div>
 <script>
-     let canvas = document.getElementById("gameCanvas");
+    let canvas = document.getElementById("gameCanvas");
     let context = canvas.getContext("2d");
     let boxSize = 25;
     let canvasWidth = 1600;
@@ -68,6 +68,10 @@
             startGame();
         } else if (gameActive && event.keyCode === 80) { // Pause/Resume game with "P" key
             gamePaused = !gamePaused; // Toggle pause state
+            if (!gamePaused) {
+                lastTime = performance.now(); // reset lastTime when resuming the game
+                requestAnimationFrame(gameLoop); // restart the game loop when unpausing
+            }
         } else {
             changeDirection(event);
         }
