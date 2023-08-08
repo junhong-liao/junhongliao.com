@@ -1,0 +1,414 @@
+@font-face {
+    font-family: 'Gothique';
+    src: url('Gothique.ttf');
+}
+
+@font-face {
+    font-family: 'nintendo';
+    src: url('nintendo.ttf');
+}
+
+@font-face {
+    font-family: 'bubble2';
+    src: url('bubble2.otf');
+}
+
+@font-face {
+    font-family: 'bubble';
+    src: url('bubble.ttf');
+}
+
+@font-face {
+    font-family: 'amsterdam';
+    src: url('amsterdam.ttf');
+}
+
+@font-face {
+    font-family: 'thicc';
+    src: url('thicc.ttf');
+}
+
+.bubble {
+    font-family: 'bubble', serif;
+    font-size: 30px;
+}
+
+.bubble2 {
+    font-family: 'bubble2', serif;
+    font-size: 30px;
+}
+
+.thicc {
+    font-family: 'thicc', serif;
+    font-size: 30px;
+}
+
+.amsterdam {
+    font-family: 'amsterdam', serif;
+    font-size: 30px;
+}
+
+
+body, input, textarea, button, header, footer {
+    font-family: 'Courier', serif;
+    font-weight: 200;
+}
+
+body, header, footer {
+    font-size: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 8px rgb(69, 69, 69);
+}
+
+.form-container form, .form-container2 label, .form-container2 input, .form-container2 textarea, .form-container2 button {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+.form-container2 {
+    margin-top: 35px;
+    color: rgb(69, 69, 69);
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    background-color: #F6F6ED;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 2%;
+    border: 3.5px solid rgb(69, 69, 69);
+    border-radius: 25px;
+}
+
+#contact {
+    padding-top: 2%;
+}
+
+button {
+    font-family: 'Gothique', serif;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 40px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(69, 69, 69);
+    color: #F6F6ED;
+    font-weight: bold;
+}
+
+button:hover, button:after {
+    background: url('fire.jpeg') no-repeat center / cover;
+    color: #F6F6ED;
+    font-weight: bold;
+    opacity: .77
+}
+
+@keyframes glow {
+    from {
+    background-color: rgb(69, 69, 69);
+    box-shadow: 0 0 5px #ff3, 0 0 10px #ff3, 0 0 15px #ff3, 0 0 20px #ff3;
+    }
+    to {
+    background-color: #500;
+    box-shadow: 0 0 5px #ff3, 0 0 10px #ff3, 0 0 15px #ff3, 0 0 20px #ff3, 0 0 25px #ff3, 0 0 30px #ff3, 0 0 35px #ff3;
+    }
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes glow {
+    from {
+    background-color: rgb(69, 69, 69);
+    box-shadow: 0 0 5px #ff3, 0 0 10px #ff3, 0 0 15px #ff3, 0 0 20px #ff3;
+    }
+    to {
+    background-color: #500;
+    box-shadow: 0 0 5px #ff3, 0 0 10px #ff3, 0 0 15px #ff3, 0 0 20px #ff3, 0 0 25px #ff3, 0 0 30px #ff3, 0 0 35px #ff3;
+    }
+}
+
+#myLink, #myLinkIndex {
+    font-family: 'Gothique';
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+    font-size: 100px;
+    margin-bottom: 5%;
+    transition: color 1s ease-in-out; /* Added this line */
+}
+
+#myLink, #myLinkIndex {
+    font-size: 100px;
+    margin-bottom: 5%;
+}
+
+#myLink:hover, #myLink:active, #myLinkIndex:hover, #myLinkIndex:active {
+    color: #B31312;
+    transition: color 1s ease-in-out; /* Added this line */
+}
+
+#navBar {
+    position: relative;
+    margin-top: 3%;
+}
+
+header, #introduction {
+    text-align: center;
+    padding: 20px;
+}
+
+#introduction img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#about_me_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    max-width: 65%; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the content horizontally */
+    position: relative; /* Add this line to keep the content in the normal flow */
+}
+
+#thank-you {
+    position: relative;
+    padding-top: 12.5%;
+    text-align: center;
+    color: rgb(69, 69, 69);
+}
+
+#extend {
+    flex: 1;
+}
+
+body {
+    background-color: #F6F6ED; 
+}
+
+#gameCanvas {
+    background-color: rgb(69, 69, 69);
+    border: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.startText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #F6F6ED;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'nintendo', serif;
+}
+    
+body, canvas {
+    font-family: 'Helvetica Neueu', sans-serif;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    display: block;
+    height: auto;
+}
+
+#gameCanvas {
+    width: 50%;
+    height: 25%;
+    background-color: rgb(69, 69, 69);
+    border: 1px solid gray;
+    margin-top: 3.25%;
+}
+
+.navItem {
+    position: relative;
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+    font-weight: bold;
+    transition: .8s;
+}
+
+.navItem:hover {
+    position: relative;
+    font-weight: bold;
+    background-color: rgb(69, 69, 69);
+    color: #F6F6ED;
+    width: fit-content;
+    border-radius: 40px;
+    padding: .5px 1%;  /* Increase padding on hover */
+}
+
+.navItem:active {
+    background-color: rgb(69, 69, 69);
+    color: #F6F6ED;
+    width: fit-content;
+    border-radius: 40px;
+    padding: .5px 1%; 
+}
+
+.navItem.active {
+    background-color: rgb(69, 69, 69);
+    color: #F6F6ED;
+    width: fit-content;
+    border-radius: 40px;
+    padding: .5px 1%;
+}
+
+.experience-dropdown {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
+.experience-dropdown {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
+/* rest of your CSS remains the same */
+
+
+.experience-dropdown ul {
+    list-style-type: none;
+    color: rgb(69, 69, 69);
+    margin: 0;
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove bullet points */
+    margin-top: 10%;
+}
+.navItem:hover .experience-dropdown {
+    opacity: 1;
+    visibility: visible;
+    color: rgb(69, 69, 69);
+}
+
+.experience-dropdown ul li a {
+    display: block;
+    color: rgb(69, 69, 69);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: none;
+    margin-top: 10%;
+}
+
+.experience-dropdown ul li a:hover {
+    text-decoration: underline;
+} 

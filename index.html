@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C0PCG23YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6C0PCG23YL');
+</script>
+
+<body>
+<header>
+<strong>
+<a href="index.html" id="myLink">Junhong Liao</a>
+</strong>
+</header>
+    <nav id="navBar">
+        <div class="navItem thicc">
+                    Experience
+                    <div class="experience-dropdown">
+        <ul>
+        <li><a href="https://linkedin.com/in/junhongliao/" target="_blank">LinkedIn</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+        </div>
+        </div>
+        <a class="navItem bubble" href="https://github.com/junhong-liao" target="_blank">GitHub</a>
+        <a class="navItem amsterdam" href="about-me.html">About Me</a>
+        <a class="navItem bubble2" href="contact-me.html">Contact</a>
+    </nav>
+<div id="gameContainer">
+<canvas height="800" id="gameCanvas" width="1600"></canvas>
+<p class="startText">press 'Enter' if bored</p>
+</div>
+<script>
+    let canvas = document.getElementById("gameCanvas");
+    let context = canvas.getContext("2d");
+    let boxSize = 25;
+    let canvasWidth = 1600;
+    let canvasHeight = 800;
+    let direction = "RIGHT";
+    let snake = [];
+    snake[0] = {x: 800, y: 400};
+    let food = {
+        x: Math.floor(Math.random() * (canvasWidth / boxSize - 1)) * boxSize,
+        y: Math.floor(Math.random() * (canvasHeight / boxSize - 1)) * boxSize
+    };
+    console.log("Generated Food Position:", "X:", food.x, "Y:", food.y);
+    let score = 0;
+    let gameInterval;
+    let gameActive = false;
+    let gamePaused = false; // added pause state variable
+    
+    document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13 && !gameActive) {  // Enter key
+            startGame();
+        } else if (gameActive && event.keyCode === 80) { // Pause/Resume game with "P" key
+            gamePaused = !gamePaused; // Toggle pause state
+            if (gamePaused) {
+                clearInterval(gameInterval); // Pause the game
+            } else {
+                gameInterval = setInterval(draw, 69.0); // Resume the game
+            }
+        } else {
+            changeDirection(event);
+        }
+    });
+    
+    function changeDirection(event) {
+        if ((event.keyCode === 37 || event.keyCode === 65) && direction !== "RIGHT") direction = "LEFT";       
+        else if ((event.keyCode === 38 || event.keyCode === 87) && direction !== "DOWN") direction = "UP";    
+        else if ((event.keyCode === 39 || event.keyCode === 68) && direction !== "LEFT") direction = "RIGHT";
+        else if ((event.keyCode === 40 || event.keyCode === 83) && direction !== "UP") direction = "DOWN";
+    }
+    
+    function collision(head, array) {
+        for(let i = 0; i < array.length; i++) {
+            if(head.x === array[i].x && head.y === array[i].y) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    function gameOver() {
+        clearInterval(gameInterval);
+        gameActive = false;
+        gamePaused = false; // reset pause state when game is over
+        document.querySelector(".startText").innerHTML = "Game Over<br><br>'P':pause<br>[W,A,S,D]:move<br>'Enter':play again";
+        document.querySelector(".startText").style.display = "block";
+    }
+    
+    function startGame() {
+        document.querySelector(".startText").style.display = "none";
+        snake = [];
+        snake[0] = {x: 800, y: 400};
+        score = 0;
+        direction = "RIGHT";
+        gameInterval = setInterval(draw, 65.0);
+        gameActive = true;
+    }
+    
+    function draw() {
+        if (gamePaused) return; // skip drawing when game is paused
+    
+        context.clearRect(0, 0, canvasWidth, canvasHeight);
+        
+        for (let i = 0; i < snake.length; i++) {
+            context.fillStyle = "#F6F6ED";
+            context.fillRect(snake[i].x, snake[i].y, boxSize, boxSize);
+        }
+        
+        context.fillStyle = "#F6F6ED";
+        context.fillRect(food.x, food.y, boxSize, boxSize);
+        
+        let snakeHeadX = snake[0].x;
+        let snakeHeadY = snake[0].y;
+        
+        if (direction === "RIGHT") snakeHeadX += boxSize;
+        if (direction === "LEFT") snakeHeadX -= boxSize;
+        if (direction === "UP") snakeHeadY -= boxSize;
+        if (direction === "DOWN") snakeHeadY += boxSize;
+        
+        if (snakeHeadX === food.x && snakeHeadY === food.y) {
+            score++;
+            food = {
+                x: Math.floor(Math.random() * (canvasWidth / boxSize - 1)) * boxSize,
+                y: Math.floor(Math.random() * (canvasHeight / boxSize)) * boxSize
+            };
+        } else {
+            snake.pop();
+        }
+        
+        let newHead = {
+            x: snakeHeadX,
+            y: snakeHeadY
+        };
+    
+        if (snakeHeadX < 0) {
+            console.log("Left Boundary Hit. SnakeHeadX:", snakeHeadX);
+            gameOver();
+        } else if (snakeHeadY < 0) {
+            console.log("Top Boundary Hit. SnakeHeadY:", snakeHeadY);
+            gameOver();
+        } else if (snakeHeadX >= canvasWidth) {
+            console.log("Right Boundary Hit. SnakeHeadX:", snakeHeadX);
+            gameOver();
+        } else if (snakeHeadY >= canvasHeight) {
+            console.log("Bottom Boundary Hit. SnakeHeadY:", snakeHeadY);
+            gameOver();
+        } else if (collision(newHead, snake)) {
+            console.log("Collision with Self. SnakeHeadX:", snakeHeadX, "SnakeHeadY:", snakeHeadY);
+            gameOver();
+        }
+        
+        snake.unshift(newHead);
+    
+        context.fillStyle = "#F6F6ED";
+        context.font = "20px nintendo";
+        context.fillText(score, (canvasWidth / 2) - 20 * score.toString().length / 2, 30);
+    }
+    </script>
+    
+<div class="pauseText"></div>
+<footer id="copyright">
+<p>Copyright © 2023 Liao </p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

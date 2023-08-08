@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <script src="script.js" defer></script>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6C0PCG23YL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6C0PCG23YL');
+</script>
+
+<body>
+    <header>
+        <strong>
+            <a href="index.html" id="myLink">Junhong Liao</a>
+        </strong>
+    </header>
+    <nav id="navBar">
+        <div class="navItem thicc">
+                    Experience
+                    <div class="experience-dropdown">
+        <ul>
+        <li><a href="https://linkedin.com/in/junhongliao/" target="_blank">LinkedIn</a></li>
+        <li><a href="resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+        </div>
+        </div>
+        <a class="navItem bubble" href="https://github.com/junhong-liao" target="_blank">GitHub</a>
+        <a class="navItem amsterdam" href="about-me.html">About Me</a>
+        <a class="navItem bubble2" href="contact-me.html">Contact</a>
+    </nav>
+    <main>
+        <section id="contact">
+            <div class="form-container2">
+                <form action="confirmation.html">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject">
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+
+                    <button type="submit" id="gothiq">Submit</button>
+                    <p style="font-size: 0.777em; color: darkgray; text-align: center;">
+                        Just a one man show here, but I want you to know that I respect your privacy and take it very seriously. I will never share your information with anyone, period.
+                    </p>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="copyright">
+        <p>Copyright © 2023 Liao </p>
+    </footer>
+</body>
+</html>
