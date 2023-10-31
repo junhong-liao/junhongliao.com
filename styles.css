@@ -24,8 +24,8 @@
 }
 
 @font-face {
-    font-family: 'thicc';
-    src: url('thicc.ttf');
+    font-family: 'grafite';
+    src: url('grafite.otf');
 }
 
 .bubble {
@@ -38,8 +38,8 @@
     font-size: 30px;
 }
 
-.thicc {
-    font-family: 'thicc', serif;
+.grafite {
+    font-family: 'grafite', serif;
     font-size: 30px;
 }
 
@@ -88,7 +88,6 @@ footer {
 
 label {
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
 input, textarea {
