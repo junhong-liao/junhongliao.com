@@ -1,31 +1,31 @@
 @font-face {
     font-family: 'Gothique';
-    src: url('Gothique.ttf');
+    src: url('../assets/fonts/Gothique.ttf');
 }
 
 @font-face {
     font-family: 'nintendo';
-    src: url('nintendo.ttf');
+    src: url('../assets/fonts/nintendo.ttf');
 }
 
 @font-face {
     font-family: 'bubble2';
-    src: url('bubble2.otf');
+    src: url('../assets/fonts/bubble2.otf');
 }
 
 @font-face {
     font-family: 'bubble';
-    src: url('bubble.ttf');
+    src: url('../assets/fonts/bubble.ttf');
 }
 
 @font-face {
     font-family: 'amsterdam';
-    src: url('amsterdam.ttf');
+    src: url('../assets/fonts/amsterdam.ttf');
 }
 
 @font-face {
     font-family: 'grafite';
-    src: url('grafite.otf');
+    src: url('../assets/fonts/grafite.otf');
 }
 
 .bubble {
@@ -113,7 +113,7 @@ button {
 }
 
 button:hover, button:after {
-    background: url('fire.jpeg') no-repeat center / cover;
+    background: url('../assets/images/fire.jpeg') no-repeat center / cover;
     color: #F6F6ED;
     font-weight: bold;
     opacity: .77
