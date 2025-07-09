@@ -6,7 +6,7 @@ import { ExternalLink, Github } from "lucide-react"
 export function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Grail",
       description:
         "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and order processing.",
       image: "/placeholder.svg?height=200&width=300",
@@ -15,7 +15,7 @@ export function Projects() {
       githubUrl: "#",
     },
     {
-      title: "Task Management App",
+      title: "Inductive AI",
       description:
         "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
       image: "/placeholder.svg?height=200&width=300",
@@ -24,7 +24,7 @@ export function Projects() {
       githubUrl: "#",
     },
     {
-      title: "Weather Dashboard",
+      title: "Arthub",
       description:
         "A responsive weather dashboard that displays current conditions and forecasts using external APIs with beautiful data visualizations.",
       image: "/placeholder.svg?height=200&width=300",

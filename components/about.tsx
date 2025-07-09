@@ -93,7 +93,7 @@ export function About() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li>🎓 Computer Science @ Columbia</li>
                     <li>💻 2+ YOE in software development</li>
-                    <li>🍎 Based in New York</li>
+                    <li>🍎 Based in New York City</li>
                     <li>🍳 Avid home chef, thrifter of all things vintage</li>
                     <li>✍🏼 Pen trick expert (ask me about it)</li>
                   </ul>
