@@ -1,28 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, Palette, Server, Smartphone } from "lucide-react"
+import { Code, Palette, Server, Shield } from "lucide-react"
 
 export function Skills() {
   const skillCategories = [
     {
       title: "Frontend",
       icon: <Code className="h-6 w-6" />,
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js"],
+      skills: ["React.js", "Next.js", "HTML5", "Tailwind CSS", "JavaScript"],
     },
     {
       title: "Backend",
       icon: <Server className="h-6 w-6" />,
-      skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL"],
+      skills: ["Python", "Java", "Spring Boot", "FastAPI", "Django", "OpenAI"],
     },
     {
       title: "Design",
       icon: <Palette className="h-6 w-6" />,
-      skills: ["Figma", "Adobe XD", "UI/UX Design", "Prototyping", "Wireframing"],
+      skills: ["Figma", "UI/UX Design", "Lucidchart", "Prototyping", "Wireframing"],
     },
     {
-      title: "Mobile",
-      icon: <Smartphone className="h-6 w-6" />,
-      skills: ["React Native", "Flutter", "iOS", "Android", "Cross-platform"],
+      title: "Security & Tools",
+      icon: <Shield className="h-6 w-6" />,
+      skills: ["FlareVM", "IDA Pro", "Wireshark", "AWS", "GCP", "Docker", "Kubernetes"],
     },
   ]
 

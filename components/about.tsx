@@ -3,10 +3,21 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react"
 
 export function About() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  const images = ["/img2.jpg", "/img1.JPG", "/img3.JPG"]
+  
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length)
+  }
+  
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   const initialContent = (
     <div className="space-y-4">
@@ -56,11 +67,25 @@ export function About() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <img
-                src="/placeholder.svg?height=400&width=400"
-                alt="Profile"
-                className="rounded-lg shadow-lg w-full max-w-md"
-              />
+              <div className="relative w-full max-w-md">
+                <img
+                  src={images[currentImageIndex]}
+                  alt="Profile"
+                  className="rounded-lg shadow-lg w-full"
+                />
+                <button
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
               
               <Card>
                 <CardContent className="p-6">
@@ -68,8 +93,9 @@ export function About() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li>🎓 Computer Science @ Columbia</li>
                     <li>💻 2+ YOE in software development</li>
-                    <li>🍎 Based in New York, NY</li>
-                    <li>🍳 Avid home chef and thrifter of all things vintage</li>
+                    <li>🍎 Based in New York</li>
+                    <li>🍳 Avid home chef, thrifter of all things vintage</li>
+                    <li>✍🏼 Pen trick expert (ask me about it)</li>
                   </ul>
                 </CardContent>
               </Card>

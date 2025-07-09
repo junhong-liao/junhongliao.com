@@ -28,7 +28,7 @@ export function Header() {
             className="h-14 hover:opacity-80 transition-opacity"
           >
             <Image 
-              src="/logo.png" 
+              src="/logo-new.png" 
               alt="Junhong Liao" 
               width={325} 
               height={39} 

@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-muted-foreground">© 2024 John Doe. All rights reserved.</p>
+            <p className="text-muted-foreground">Made with ❤ and ☕ by Jun. All rights reserved.</p>
           </div>
 
           <div className="flex space-x-4">

@@ -49,15 +49,15 @@ export function Contact() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>john.doe@example.com</span>
+                  <span>jl5915@columbia.edu</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>+1 (555) 123-4567</span>
+                  <span>407.284.8519</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>San Francisco, CA</span>
+                  <span>New York, NY</span>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export function Contact() {
             <Card>
               <CardHeader>
                 <CardTitle>Send a Message</CardTitle>
-                <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+                <CardDescription>Fill out the form and I'll get back to you as soon as possible.</CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">

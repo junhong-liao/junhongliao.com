@@ -16,12 +16,12 @@ export function Hero() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Hi, I'm <span className="text-primary">Junhong.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8">Founder, software sngineer, designer, malware enthusiast</p>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8">Founder, software engineer, product designer, malware enthusiast</p>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             {/* Creator of user-centered digital experiences.  */}
-            Passionate about solving problems with code.
+            Passionate about solving human-centric problems with code.
             <br/>
-            Lover of good food, good music, and good conversation.
+            Lover of good food, music, and conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -34,7 +34,7 @@ export function Hero() {
           </div>
 
           <div className="flex justify-center space-x-6">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={() => window.open('/resume.pdf', '_blank')}>
               <FileText className="h-5 w-5" />
               <span className="sr-only">Resume</span>
             </Button>
