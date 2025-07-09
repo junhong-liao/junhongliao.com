@@ -25,13 +25,13 @@ export function Header() {
         <div className="flex items-center justify-between">
           <button 
             onClick={scrollToTop}
-            className="h-11 hover:opacity-80 transition-opacity"
+            className="h-14 hover:opacity-80 transition-opacity"
           >
             <Image 
               src="/logo.png" 
               alt="Junhong Liao" 
-              width={250} 
-              height={30} 
+              width={325} 
+              height={39} 
               className="h-full w-auto"
             />
           </button>
